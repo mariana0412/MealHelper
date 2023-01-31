@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,6 +26,22 @@ SECRET_KEY = 'django-insecure-z4r_c1i*&4^th@z@ucd-w@()nr=nbtgdfw1d9rkpp%vnbilu4y
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+
+SIMPLE_JWT = {
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': False
+}
 
 
 # Application definition
