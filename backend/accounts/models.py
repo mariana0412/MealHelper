@@ -13,6 +13,6 @@ class Product(models.Model):
 class MealsHelperUser(AbstractUser):
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     avatar = models.ImageField(upload_to="accountsAvatars", null=True, blank=True)
-    classes = models.ManyToManyField(Product, related_name="products")
+    products = models.ManyToManyField(Product, related_name="products")
 
     REQUIRED_FIELDS = ["first_name", "last_name"]
