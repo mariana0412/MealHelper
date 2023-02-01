@@ -2,6 +2,7 @@ backend/db.sqlite3
 backend/.idea
 
 **.idea**
+**.sass-cache**
 client/package-lock.json
 client/README.md
 client/node_modules
