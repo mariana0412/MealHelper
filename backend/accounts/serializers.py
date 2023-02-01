@@ -1,8 +1,9 @@
 from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ObjectDoesNotExist
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
 
-from accounts.models import MealsHelperUser
+from accounts.models import MealsHelperUser, Product
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -47,3 +48,33 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         # Add custom claims
         token['username'] = user.username
         return token
+
+
+class AddProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ('name', 'description', 'photo')
+        extra_kwargs = {
+            'name': {'required': True},
+            'description': {'required': False},
+            'photo': {'required': False},
+        }
+
+    def validate_name(self, value):
+        user = self.context['request'].user
+        if user.products.filter(name=value).exists():
+            raise serializers.ValidationError({"name": "This user already has this product."})
+        return value
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+
+        product = Product.objects.create(
+            name=validated_data['name'],
+            description=validated_data.get('description'),
+            photo=validated_data.get('photo'),
+        )
+        user.products.add(product)
+        # TODO: think about whether to save product with the same name or even all attributes in db (now I am doing so)
+
+        return product
