@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import './Shared.css';
 import {HomePage} from "../home/HomePage";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 

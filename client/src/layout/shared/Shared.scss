@@ -1,4 +1,5 @@
-@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
 
 body::-webkit-scrollbar {
   width: 0;
@@ -63,7 +64,7 @@ body::-webkit-scrollbar {
           gap: 15px;
 
           .user-instructions-item {
-            background: $white;
+            background: #e6e6e6;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -150,6 +151,7 @@ body::-webkit-scrollbar {
 
 .sidebar {
   max-width: 300px;
+  width: 100%;
   margin: 10px;
   background: $white;
   border-radius: 10px;

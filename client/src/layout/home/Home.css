@@ -1,0 +1,41 @@
+.popular-dishes-section .section-content {
+  display: flex;
+  align-items: flex-start; }
+  .popular-dishes-section .section-content .dishes-list-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 10px;
+    width: 100%; }
+    .popular-dishes-section .section-content .dishes-list-container .dishes-list-item {
+      width: 100%;
+      min-height: 300px;
+      box-shadow: 0 0 10px -7px #212529;
+      position: relative;
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .popular-dishes-section .section-content .dishes-list-container .dishes-list-item img {
+        width: 100%;
+        border-radius: 10px; }
+      .popular-dishes-section .section-content .dishes-list-container .dishes-list-item p {
+        font-weight: bold;
+        font-size: 1.3rem;
+        margin-block: 10px; }
+
+@media screen and (min-width: 768px) {
+  .popular-dishes-section .section-content .dishes-list-container {
+    grid-template-columns: repeat(2, 1fr); } }
+@media screen and (min-width: 992px) {
+  .popular-dishes-section .section-content .dishes-list-container {
+    grid-template-columns: repeat(3, 1fr); } }
+@media screen and (min-width: 1200px) {
+  .popular-dishes-section .section-content .dishes-list-container {
+    grid-template-columns: repeat(4, 1fr); } }
+@media screen and (min-width: 1400px) {
+  .popular-dishes-section .section-content .dishes-list-container {
+    grid-template-columns: repeat(5, 1fr); } }
+
+/*# sourceMappingURL=Home.css.map */

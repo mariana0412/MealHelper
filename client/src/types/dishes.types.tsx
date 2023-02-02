@@ -1,10 +1,12 @@
 import {ReactElement} from "react";
 
 export type Dish = {
+  id: number | string,
   name: string,
   category: string,
   preparationComplexity: number,
-  recipe: Recipe
+  recipe: Recipe,
+  image: string
 }
 
 export type Recipe = {

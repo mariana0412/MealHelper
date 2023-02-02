@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {FC} from "react";
-import {faCheck, faFire, faHeart, faListUl, faTableList} from "@fortawesome/free-solid-svg-icons";
+import {faCheck, faFire, faHeart, faListUl} from "@fortawesome/free-solid-svg-icons";
 
 export const DishesSidebar: FC = () => {
   return (
@@ -29,7 +29,7 @@ export const DishesSidebar: FC = () => {
       <div className={"sidebar-section"}>
         <h3>Order by</h3>
         <select>
-          <option value={"date_added"} selected>Date added</option>
+          <option value={"date_added"} defaultChecked>Date added</option>
           <option value={"name"}>Name</option>
           <option value={"preparation_complexity"}>Preparation complexity</option>
         </select>
