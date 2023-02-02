@@ -9320,17 +9320,64 @@ body {
     object-fit: cover;
     position: relative;
     z-index: 1; }
-  .header-image-container .header-text {
+  .header-image-container .header-content {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
-    color: #fff;
     max-width: 1400px;
-    width: 100%; }
-    .header-image-container .header-text h1, .header-image-container .header-text .h1 {
-      font-size: 5rem; }
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .header-image-container .header-content .header-text {
+      color: #fff;
+      width: 100%;
+      display: flex;
+      flex-direction: column; }
+      .header-image-container .header-content .header-text h1, .header-image-container .header-content .header-text .h1 {
+        font-size: max(5vw, 50px); }
+      .header-image-container .header-content .header-text h2, .header-image-container .header-content .header-text .h2 {
+        font-size: max(2vw, 25px);
+        text-align: center; }
+    .header-image-container .header-content .user-instructions {
+      max-width: 500px;
+      width: 100%; }
+      .header-image-container .header-content .user-instructions .user-instructions-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 15px; }
+        .header-image-container .header-content .user-instructions .user-instructions-list .user-instructions-item {
+          background: #fff;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 15px;
+          text-align: center;
+          border-radius: 10px;
+          box-shadow: 0 0 30px -10px #000;
+          min-width: 100px;
+          cursor: pointer;
+          transition: 0.5s; }
+          .header-image-container .header-content .user-instructions .user-instructions-list .user-instructions-item:first-child:hover {
+            transform: translate(-10px, -10px); }
+          .header-image-container .header-content .user-instructions .user-instructions-list .user-instructions-item:nth-child(2):hover {
+            transform: translate(10px, -10px); }
+          .header-image-container .header-content .user-instructions .user-instructions-list .user-instructions-item:nth-child(3):hover {
+            transform: translate(-10px, 10px); }
+          .header-image-container .header-content .user-instructions .user-instructions-list .user-instructions-item:nth-child(4):hover {
+            transform: translate(10px, 10px); }
+          .header-image-container .header-content .user-instructions .user-instructions-list .user-instructions-item p {
+            font-weight: bold; }
+          .header-image-container .header-content .user-instructions .user-instructions-list .user-instructions-item img {
+            max-width: 100px;
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            margin-block: 20px; }
   .header-image-container::after {
     content: "";
     position: absolute;

@@ -17,18 +17,87 @@ body {
     z-index: 1;
   }
 
-  .header-text {
+  .header-content {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
-    color: $white;
     max-width: map-get($grid-breakpoints, "xxl");
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    h1 {
-      font-size: 5rem;
+    .header-text {
+      color: $white;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: max(5vw, 50px);
+      }
+
+      h2 {
+        font-size: max(2vw, 25px);
+        text-align: center;
+      }
+    }
+
+    .user-instructions {
+      max-width: 500px;
+      width: 100%;
+
+      .user-instructions-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 15px;
+
+        .user-instructions-item {
+          background: $white;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 15px;
+          text-align: center;
+          border-radius: 10px;
+          box-shadow: 0 0 30px -10px $black;
+          min-width: 100px;
+          cursor: pointer;
+          transition: 0.5s;
+
+          &:first-child:hover {
+            transform: translate(-10px, -10px);
+          }
+
+          &:nth-child(2):hover {
+            transform: translate(10px, -10px);
+          }
+
+          &:nth-child(3):hover {
+            transform: translate(-10px, 10px);
+          }
+
+          &:nth-child(4):hover {
+            transform: translate(10px, 10px);
+          }
+
+          p {
+            font-weight: bold;
+          }
+
+          img {
+            max-width: 100px;
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            margin-block: 20px;
+          }
+        }
+      }
     }
   }
 
