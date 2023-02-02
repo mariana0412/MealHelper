@@ -3,7 +3,7 @@ import {Container, Nav, Navbar, Offcanvas, Button, Image, Row, Col} from "react-
 
 export const Header: FC = () => {
   return (
-    <header>
+    <header className={"site-header"}>
       <Navbar bg={"dark"} variant={"dark"} fixed={"top"} expand={"lg"}>
         <Container fluid>
           <Navbar.Brand href={'/'} className={"me-4"}>
@@ -44,7 +44,7 @@ export const Header: FC = () => {
           <div className={"header-text align-items-center align-items-xl-start mt-5"}>
             <h1>Meal Helper</h1>
             <h2 className={"mt-3"}>Delicious recipes. Daily updated</h2>
-            <Button variant={"danger"} size={"lg"} className={"mt-5"}>Look for a recipe</Button>
+            <Button variant={"warning"} size={"lg"} className={"mt-5"}>Look for a recipe</Button>
           </div>
           <div className={"user-instructions mt-5"}>
             <div className={"user-instructions-list"}>

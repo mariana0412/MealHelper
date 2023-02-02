@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import {MainPage} from "../mainPage/MainPage";
+import {HomePage} from "../home/HomePage";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 const App: FC = () => {
@@ -9,7 +9,7 @@ const App: FC = () => {
     <div className={"application"}>
       <BrowserRouter>
         <Routes>
-          <Route index path={'/'} element={<MainPage />} />
+          <Route index path={'/'} element={<HomePage />} />
         </Routes>
       </BrowserRouter>
     </div>
