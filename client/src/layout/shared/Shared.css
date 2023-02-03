@@ -43,7 +43,7 @@ body::-webkit-scrollbar {
         grid-template-rows: repeat(2, 1fr);
         gap: 15px; }
         .site-header .header-image-container .header-content .user-instructions .user-instructions-list .user-instructions-item {
-          background: #e6e6e6;
+          background: #eaeaea;
           display: flex;
           flex-direction: column;
           align-items: center;

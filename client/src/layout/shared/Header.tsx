@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {Container, Nav, Navbar, Offcanvas, Button, Image, Row, Col} from "react-bootstrap";
+import {Container, Nav, Navbar, Offcanvas, Button, Image} from "react-bootstrap";
 
 export const Header: FC = () => {
   return (

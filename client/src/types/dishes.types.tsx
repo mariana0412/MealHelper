@@ -4,7 +4,7 @@ export type Dish = {
   id: number | string,
   name: string,
   category: string,
-  preparationComplexity: number,
+  preparationTime: string,
   recipe: Recipe,
   image: string
 }

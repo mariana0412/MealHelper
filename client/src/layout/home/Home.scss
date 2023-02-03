@@ -2,10 +2,18 @@
 @import "../../../node_modules/bootstrap/scss/variables";
 
 .popular-dishes-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .view-all-dishes-button {
+    min-width: 300px;
+  }
 
   .section-content {
     display: flex;
     align-items: flex-start;
+    width: 100%;
 
     .dishes-list-container {
       display: grid;
@@ -27,20 +35,25 @@
 
         img {
           width: 100%;
+          height: 200px;
+          object-fit: cover;
           border-radius: 10px;
         }
 
-        p {
+        .dish-card-name {
           font-weight: bold;
           font-size: 1.3rem;
-          margin-block: 10px;
+        }
+
+        .dish-card-category, .dish-card-preparation-complexity {
+          font-size: 1rem;
         }
       }
     }
   }
 }
 
-@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+@media screen and (min-width: map-get($grid-breakpoints, "sm")) {
   .popular-dishes-section {
 
     .section-content {
