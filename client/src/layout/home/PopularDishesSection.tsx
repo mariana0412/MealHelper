@@ -1,11 +1,11 @@
-import {FC} from "react";
+import {FC, forwardRef} from "react";
 import {DishesList} from "../shared/DishesList";
 import {DishesListItem} from "../shared/DishesListItem";
 import {Link} from "react-router-dom";
 
-export const PopularDishesSection: FC = () => {
+export const PopularDishesSection: FC<any> = forwardRef((props, ref: any) => {
   return (
-    <section className={"popular-dishes-section"}>
+    <section className={"popular-dishes-section"} ref={ref}>
       <h2 className={'section-heading'}>Popular dishes</h2>
       <div className={"section-content"}>
         <DishesList>
@@ -21,4 +21,4 @@ export const PopularDishesSection: FC = () => {
       <Link to={'/dishes'} replace className={"btn btn-dark text-align-center my-3 view-all-dishes-button btn-lg"}>View all dishes</Link>
     </section>
   );
-}
+})

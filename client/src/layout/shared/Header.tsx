@@ -4,7 +4,7 @@ import {Container, Nav, Navbar, Offcanvas, Button, Image} from "react-bootstrap"
 export const Header: FC = () => {
   return (
     <header className={"site-header"}>
-      <Navbar bg={"dark"} variant={"dark"} fixed={"top"} expand={"lg"}>
+      <Navbar bg={"dark"} variant={"dark"} fixed={"top"} expand={"lg"} className={"header-navbar"}>
         <Container fluid>
           <Navbar.Brand href={'/'} className={"me-4"}>
             <img alt={"logo"} src={`${process.env.PUBLIC_URL}/logo.png`} width={"32"} height={"32"}
@@ -44,7 +44,7 @@ export const Header: FC = () => {
           <div className={"header-text align-items-center align-items-xl-start mt-5"}>
             <h1>Meal Helper</h1>
             <h2 className={"mt-3"}>Delicious recipes. Daily updated</h2>
-            <Button variant={"warning"} size={"lg"} className={"mt-5"}>Look for a recipe</Button>
+            <Button variant={"warning"} size={"lg"} className={"mt-5 look-for-a-recipe"}>Look for a recipe</Button>
           </div>
           <div className={"user-instructions mt-5"}>
             <div className={"user-instructions-list"}>
