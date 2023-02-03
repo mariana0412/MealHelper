@@ -35,6 +35,35 @@
         .popular-dishes-section .section-content .dishes-list-container .dishes-list-item .dish-card-category, .popular-dishes-section .section-content .dishes-list-container .dishes-list-item .dish-card-preparation-complexity {
           font-size: 1rem; }
 
+.about-section {
+  background: #ffc107; }
+  .about-section.visible .section-content .image-container img {
+    transform: translateX(0) rotate(0deg); }
+  .about-section.visible .section-content .about-text p {
+    transform: translateX(0); }
+  .about-section .section-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden; }
+    .about-section .section-content .image-container {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .about-section .section-content .image-container img {
+        transition: 2s ease;
+        transform: translateX(-200%) rotate(360deg);
+        max-width: 768px;
+        width: 100%; }
+    .about-section .section-content .about-text {
+      font-size: 1.2rem; }
+      .about-section .section-content .about-text p {
+        text-align: justify;
+        transition: 2s ease;
+        transform: translateX(200%); }
+
 @media screen and (min-width: 576px) {
   .popular-dishes-section .section-content .dishes-list-container {
     grid-template-columns: repeat(2, 1fr); } }
@@ -43,7 +72,14 @@
     grid-template-columns: repeat(3, 1fr); } }
 @media screen and (min-width: 1200px) {
   .popular-dishes-section .section-content .dishes-list-container {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+
+  .about-section .section-content {
+    flex-wrap: nowrap; }
+    .about-section .section-content .image-container {
+      width: 50%; }
+    .about-section .section-content .about-text {
+      width: 50%; } }
 @media screen and (min-width: 1400px) {
   .popular-dishes-section .section-content .dishes-list-container {
     grid-template-columns: repeat(5, 1fr); } }

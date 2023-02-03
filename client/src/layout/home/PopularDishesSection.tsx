@@ -18,7 +18,7 @@ export const PopularDishesSection: FC = () => {
           <DishesListItem dish={{id: 7, name: "Смажене російське дитинча", image: "header-image.jpg", category: "Перші страви", preparationTime: "10 min", recipe: {items: []}}} />
         </DishesList>
       </div>
-      <Link to={'/dishes'} replace className={"btn btn-dark text-align-center my-4 view-all-dishes-button btn-lg"}>View all dishes</Link>
+      <Link to={'/dishes'} replace className={"btn btn-dark text-align-center my-3 view-all-dishes-button btn-lg"}>View all dishes</Link>
     </section>
   );
 }

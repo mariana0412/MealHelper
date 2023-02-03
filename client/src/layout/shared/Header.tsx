@@ -30,7 +30,7 @@ export const Header: FC = () => {
                 <Nav.Link href={"#link"}>About</Nav.Link>
               </Nav>
               <div className={"mt-4 mt-lg-0"}>
-                <Button variant={"primary"} className={"me-2"}>Sign In</Button>
+                <Button variant={"warning"} className={"me-2"}>Sign In</Button>
                 <Button variant={"outline-light"}>Sign Up</Button>
               </div>
             </Offcanvas.Body>
