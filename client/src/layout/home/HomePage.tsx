@@ -4,11 +4,13 @@ import {Footer} from "../shared/Footer";
 import {PopularDishesSection} from "./PopularDishesSection";
 import {AboutSection} from "./AboutSection";
 import './Home.css';
+import {useLocation} from "react-router";
 
 export const HomePage: FC = () => {
 
   const aboutSectionRef = useRef();
   const popularDishesSectionRef = useRef();
+  const location = useLocation();
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries, observer) => {
@@ -29,16 +31,24 @@ export const HomePage: FC = () => {
       }
     })
 
-    if (aboutSectionRef.current)
+    if (aboutSectionRef.current) {
       observer.observe(aboutSectionRef.current)
+
+      if (location.state?.scrollToAboutSection) {
+        const aboutSection = aboutSectionRef.current as HTMLElement;
+        const headerNavbarHeight = document.querySelector('.header-navbar')?.clientHeight ?? 0;
+        const scrollDistance = aboutSection.getBoundingClientRect().top + window.scrollY - headerNavbarHeight;
+        window.scrollTo({top: scrollDistance, behavior: "smooth"});
+      }
+    }
   })
 
   return (
-    <div className={"main-page"}>
+    <main className={"main-page"}>
       <Header />
       <PopularDishesSection ref={popularDishesSectionRef} />
       <AboutSection ref={aboutSectionRef} />
       <Footer />
-    </div>
+    </main>
   );
 }

@@ -36,7 +36,9 @@
           font-size: 1rem; }
 
 .about-section {
-  background: #ffc107; }
+  background: #ffc107;
+  display: flex;
+  flex-direction: column; }
   .about-section.visible .section-content .image-container img {
     transform: translateX(0) rotate(0deg); }
   .about-section.visible .section-content .about-text p {

@@ -55,6 +55,8 @@
 
 .about-section {
   background: $warning;
+  display: flex;
+  flex-direction: column;
 
   &.visible {
 
