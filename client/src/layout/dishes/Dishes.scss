@@ -1,2 +1,127 @@
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
+
+.dishes-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 58px;
+
+  .sidebar-container {
+    max-width: 320px;
+    width: 100%;
+
+    .sidebar {
+      position: fixed;
+    }
+  }
+  
+  .section-content {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+
+    .dishes-list-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 10px;
+      width: 100%;
+
+      .dishes-list-item {
+        width: 100%;
+        min-height: 300px;
+        box-shadow: 0 0 10px -7px $dark;
+        position: relative;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+
+        .dish-card-name {
+          font-weight: bold;
+          font-size: 1.3rem;
+        }
+
+        .dish-card-category, .dish-card-preparation-complexity {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+  .dishes-section {
+
+    .section-content {
+
+      .dishes-list-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+  .dishes-section {
+
+    .section-content {
+
+      .dishes-list-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "xl")) {
+  .dishes-section {
+
+    .section-content {
+
+      .dishes-list-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  .about-section {
+
+    .section-content {
+      flex-wrap: nowrap;
+
+      .image-container {
+        width: 50%;
+      }
+
+      .about-text {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "xxl")) {
+  .dishes-section {
+
+    .section-content {
+
+      .dishes-list-container {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+  }
+}
