@@ -128,6 +128,13 @@ body::-webkit-scrollbar {
   background: $dark;
   color: $light;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    margin: 0;
+  }
 }
 
 .section-heading {

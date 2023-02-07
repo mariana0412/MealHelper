@@ -26,14 +26,14 @@ export const dishHandler = {
   castToDishType: (object: any): Dish | undefined => {
     let dish: Dish = {
       id: object.idMeal,
-      name: object.strMeal,
+      name: object.strMeal.trim(),
       area: object.strArea,
       category: object.strCategory,
       drinkAlternate: object.strDrinkAlternate,
       tags: object.strTags?.split(','),
       youTubeLink: object.strYouTube,
       image: object.strMealThumb,
-      preparationTime: "2h. 15min.",
+      preparationTime: (Math.floor(Math.random() * 120) + 5).toString() + "min.",
       recipe: {
         instructions: object.strInstructions,
         ingredients: []

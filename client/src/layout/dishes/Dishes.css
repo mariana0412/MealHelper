@@ -1,7 +1,9 @@
 .dishes-section {
   display: flex;
   flex-direction: column;
-  margin-top: 68px; }
+  justify-content: space-between;
+  margin-top: 68px;
+  min-height: calc(100vh - 112px); }
   .dishes-section .dishes-section-filters {
     margin-inline: 10px;
     background: #fff;
@@ -30,7 +32,15 @@
   .dishes-section .section-content {
     display: flex;
     align-items: flex-start;
-    width: 100%; }
+    width: 100%;
+    min-height: calc(100vh - 230px); }
+    .dishes-section .section-content.loading {
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50vh; }
+      .dishes-section .section-content.loading img {
+        width: 128px; }
     .dishes-section .section-content .dishes-list-container {
       display: grid;
       grid-template-columns: 1fr;

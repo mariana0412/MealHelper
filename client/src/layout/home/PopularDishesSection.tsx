@@ -6,7 +6,8 @@ import {Dish, PopularDishesSectionPropsType, PopularDishesSectionStateType} from
 import {dishHandler} from "../../helpers/dishHandler";
 
 const initialState: PopularDishesSectionStateType = {
-  dishes: []
+  dishes: [],
+  contentIsLoaded: false
 }
 
 export const PopularDishesSection: FC<any> = forwardRef((props: PopularDishesSectionPropsType, ref: any) => {
@@ -17,7 +18,8 @@ export const PopularDishesSection: FC<any> = forwardRef((props: PopularDishesSec
     dishHandler.fetchByNumber(10).then(dishes => {
       setState({
         ...state,
-        dishes: dishes as Dish[]
+        dishes: dishes as Dish[],
+        contentIsLoaded: true
       });
       props.setHomePageLoaded();
     })
@@ -26,14 +28,18 @@ export const PopularDishesSection: FC<any> = forwardRef((props: PopularDishesSec
   return (
     <section className={"popular-dishes-section"} ref={ref}>
       <h2 className={'section-heading'}>Popular dishes</h2>
-      <div className={"section-content"}>
-        <DishesList>
-          {
-            state.dishes.map(dish => (
-              <DishesListItem key={dish.id} dish={dish} />
-            ))
-          }
-        </DishesList>
+      <div className={`section-content ${!state.contentIsLoaded ? `loading` : ``}`}>
+        { state.contentIsLoaded ?
+            <DishesList>
+              {
+                state.dishes.map(dish => (
+                  <DishesListItem key={dish.id} dish={dish} />
+                ))
+              }
+            </DishesList>
+          :
+            <img src={`${process.env.PUBLIC_URL}/loading.gif`} alt={"loading"} />
+        }
       </div>
       <Link to={'/dishes'} replace className={"btn btn-dark text-align-center my-3 view-all-dishes-button btn-lg"}>View all dishes</Link>
     </section>

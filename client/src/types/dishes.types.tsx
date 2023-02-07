@@ -34,7 +34,8 @@ export type DishesSectionStateType = {
   filteredContent: Dish[],
   contentOnPage: Dish[],
   activePage: number,
-  contentPerPage: number
+  contentPerPage: number,
+  contentIsLoaded: boolean
 }
 
 export type DishesListPropsType = {
@@ -48,7 +49,8 @@ export type DishesSectionFiltersType = {
 }
 
 export type PopularDishesSectionStateType = {
-  dishes: Dish[]
+  dishes: Dish[],
+  contentIsLoaded: boolean
 }
 
 export type PopularDishesSectionPropsType = {
