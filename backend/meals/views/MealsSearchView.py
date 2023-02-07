@@ -4,9 +4,10 @@ from rest_framework import generics
 from meals.pagination import StandardResultsSetPagination
 
 from meals.models import Meal
-from meals.serializers import MealSerializer
 
 from string import ascii_lowercase
+
+from meals.serializers.MealSerializer import MealSerializer
 
 
 def get_ingredients(meal):
@@ -20,7 +21,7 @@ def get_ingredients(meal):
     return ingredients
 
 
-class SelectMealsView(generics.ListAPIView):
+class MealsSearchView(generics.ListAPIView):
     queryset = Meal.objects.all()
     permission_classes = (IsAuthenticated,)
     serializer_class = MealSerializer

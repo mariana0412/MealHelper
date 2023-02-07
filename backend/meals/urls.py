@@ -1,6 +1,7 @@
 from django.urls import path
-from meals.views import SelectMealsView
+
+from meals.views.MealsSearchView import MealsSearchView
 
 urlpatterns = [
-    path('', SelectMealsView.as_view(), name='selected_meals'),
+    path('', MealsSearchView.as_view(), name='selected_meals'),
 ]
