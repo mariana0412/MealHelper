@@ -31,7 +31,7 @@ export const DishesSidebar: FC = () => {
         <select>
           <option value={"date_added"} defaultChecked>Date added</option>
           <option value={"name"}>Name</option>
-          <option value={"preparation_complexity"}>Preparation complexity</option>
+          <option value={"preparation_time"}>Preparation time</option>
         </select>
       </div>
     </aside>

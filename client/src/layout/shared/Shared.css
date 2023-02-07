@@ -86,7 +86,12 @@ body::-webkit-scrollbar {
   padding: 10px;
   background: #212529;
   color: #f8f9fa;
-  text-align: center; }
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .site-footer p {
+    margin: 0; }
 
 .section-heading {
   font-size: 2.5rem;
@@ -147,5 +152,40 @@ body::-webkit-scrollbar {
       background: #ffc107; }
     .sidebar select option {
       background: #f8f9fa; }
+
+select, input {
+  background: #f8f9fa;
+  outline: none;
+  border-radius: 10px;
+  padding: 7px 10px;
+  border: 1px solid #e6e6e6; }
+
+.pagination {
+  background: #fff;
+  box-shadow: 0 0 10px -7px #212529;
+  padding: 5px;
+  display: flex;
+  justify-content: center; }
+  .pagination .button-list span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    color: #212529;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    user-select: none; }
+    .pagination .button-list span.active {
+      color: #212529;
+      background: #ffc107; }
+    .pagination .button-list span:not(.active):not(.dots):hover {
+      color: #ffc107;
+      background: #f8f9fa; }
+    .pagination .button-list span:not(:last-child) {
+      margin-right: 5px; }
 
 /*# sourceMappingURL=Shared.css.map */

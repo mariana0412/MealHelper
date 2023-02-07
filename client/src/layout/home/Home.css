@@ -7,7 +7,15 @@
   .popular-dishes-section .section-content {
     display: flex;
     align-items: flex-start;
-    width: 100%; }
+    width: 100%;
+    min-height: calc(100vh - 170px); }
+    .popular-dishes-section .section-content.loading {
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50vh; }
+      .popular-dishes-section .section-content.loading img {
+        width: 128px; }
     .popular-dishes-section .section-content .dishes-list-container {
       display: grid;
       grid-template-columns: 1fr;
@@ -36,7 +44,9 @@
           font-size: 1rem; }
 
 .about-section {
-  background: #ffc107; }
+  background: #ffc107;
+  display: flex;
+  flex-direction: column; }
   .about-section.visible .section-content .image-container img {
     transform: translateX(0) rotate(0deg); }
   .about-section.visible .section-content .about-text p {

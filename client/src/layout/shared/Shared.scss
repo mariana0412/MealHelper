@@ -128,6 +128,13 @@ body::-webkit-scrollbar {
   background: $dark;
   color: $light;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    margin: 0;
+  }
 }
 
 .section-heading {
@@ -211,6 +218,54 @@ body::-webkit-scrollbar {
 
     option {
       background: $light;
+    }
+  }
+}
+
+select, input {
+  background: $light;
+  outline: none;
+  border-radius: 10px;
+  padding: 7px 10px;
+  border: 1px solid #e6e6e6;
+}
+
+.pagination {
+  background: $white;
+  box-shadow: 0 0 10px -7px $dark;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+
+  .button-list {
+
+    span {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: $white;
+      color: $dark;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+      width: 16px;
+      height: 16px;
+      user-select: none;
+
+      &.active {
+        color: $dark;
+        background: $warning;
+      }
+
+      &:not(.active):not(.dots):hover {
+        color: $warning;
+        background: $light;
+      }
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
     }
   }
 }

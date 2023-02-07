@@ -1,0 +1,139 @@
+.dish-details-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 68px; }
+  .dish-details-section .meal-image, .dish-details-section iframe {
+    max-width: 600px;
+    min-width: 300px;
+    width: 100%;
+    aspect-ratio: 2 / 1.2;
+    object-fit: cover;
+    border-radius: 10px; }
+  .dish-details-section iframe {
+    background: #e6e6e6; }
+  .dish-details-section .tag {
+    border-radius: 10px;
+    background: #0d6efd;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #f8f9fa;
+    font-weight: normal !important;
+    padding: 3px 10px; }
+    .dish-details-section .tag:not(:first-child) {
+      margin-left: 5px; }
+  .dish-details-section .additional-info {
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    padding: 10px; }
+    .dish-details-section .additional-info h3 {
+      margin-bottom: 20px; }
+    .dish-details-section .additional-info p {
+      margin-bottom: 5px; }
+    .dish-details-section .additional-info span {
+      font-weight: bold; }
+  .dish-details-section table {
+    border-radius: 10px; }
+    .dish-details-section table td {
+      vertical-align: middle; }
+
+.dishes-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 68px;
+  min-height: calc(100vh - 112px); }
+  .dishes-section .dishes-section-filters {
+    margin-inline: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px -7px #212529;
+    flex-wrap: wrap; }
+    .dishes-section .dishes-section-filters .dishes-section-filters-item {
+      width: 100%; }
+    .dishes-section .dishes-section-filters select {
+      min-width: 150px;
+      width: 100%;
+      cursor: pointer; }
+    .dishes-section .dishes-section-filters span {
+      display: inline-flex;
+      white-space: nowrap; }
+    .dishes-section .dishes-section-filters input {
+      width: 100%; }
+  .dishes-section .sidebar-container {
+    max-width: 320px;
+    width: 100%; }
+    .dishes-section .sidebar-container .sidebar {
+      position: fixed; }
+  .dishes-section .pagination {
+    margin-inline: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .dishes-section .section-content {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    min-height: calc(100vh - 230px); }
+    .dishes-section .section-content.loading {
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50vh; }
+      .dishes-section .section-content.loading img {
+        width: 128px; }
+    .dishes-section .section-content .dishes-list-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 10px;
+      width: 100%; }
+      .dishes-section .section-content .dishes-list-container .dishes-list-item {
+        width: 100%;
+        min-height: 300px;
+        box-shadow: 0 0 10px -7px #212529;
+        position: relative;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; }
+        .dishes-section .section-content .dishes-list-container .dishes-list-item img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 10px; }
+        .dishes-section .section-content .dishes-list-container .dishes-list-item .dish-card-name {
+          font-weight: bold;
+          font-size: 1.3rem; }
+        .dishes-section .section-content .dishes-list-container .dishes-list-item .dish-card-category, .dishes-section .section-content .dishes-list-container .dishes-list-item .dish-card-preparation-complexity {
+          font-size: 1rem; }
+
+@media screen and (min-width: 576px) {
+  .dishes-section .dishes-section-filters .dishes-section-filters-item {
+    width: auto; }
+  .dishes-section .section-content .dishes-list-container {
+    grid-template-columns: repeat(2, 1fr); } }
+@media screen and (min-width: 992px) {
+  .dishes-section .section-content .dishes-list-container {
+    grid-template-columns: repeat(3, 1fr); } }
+@media screen and (min-width: 1200px) {
+  .dish-details-section .left-column {
+    min-width: 600px; }
+
+  .dishes-section .dishes-section-filters {
+    flex-wrap: nowrap; }
+  .dishes-section .section-content .dishes-list-container {
+    grid-template-columns: repeat(4, 1fr); }
+
+  .about-section .section-content {
+    flex-wrap: nowrap; }
+    .about-section .section-content .image-container {
+      width: 50%; }
+    .about-section .section-content .about-text {
+      width: 50%; } }
+@media screen and (min-width: 1400px) {
+  .dishes-section .section-content .dishes-list-container {
+    grid-template-columns: repeat(5, 1fr); } }
+
+/*# sourceMappingURL=Dishes.css.map */

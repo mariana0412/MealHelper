@@ -9,10 +9,8 @@ export const DishesListItem: FC<DishesListItemPropsType> = props => {
   return (
     <div className={"dishes-list-item"}>
       <header className={"dish-card-header"}>
-        <img src={`${process.env.PUBLIC_URL}/${props.dish.image}`} alt=""/>
+        <img src={props.dish.image} alt=""/>
         <p className={"dish-card-name mt-2 mb-1"}>{props.dish.name}</p>
-      </header>
-      <div className={"dish-card-content"}>
         <div className={"dish-card-content-row d-flex flex-wrap mb-4"}>
           <span className={"dish-card-category mb-0 me-4"}>
             <FontAwesomeIcon icon={faUtensils} className={"me-2"} />
@@ -23,7 +21,14 @@ export const DishesListItem: FC<DishesListItemPropsType> = props => {
             {props.dish.preparationTime}
           </span>
         </div>
-        <Link to={`/dishes/${props.dish.id}`} replace className={"w-100 btn btn-warning"}>View recipe</Link>
+      </header>
+      <div className={"dish-card-content"}>
+        <Link to={`/dishes/${props.dish.id}`}
+              state={{dish: props.dish}}
+              replace
+              className={"w-100 btn btn-warning"}>
+          View recipe
+        </Link>
       </div>
     </div>
   );

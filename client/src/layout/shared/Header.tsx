@@ -1,42 +1,11 @@
 import {FC} from "react";
-import {Container, Nav, Navbar, Offcanvas, Button, Image} from "react-bootstrap";
+import {Container, Button, Image} from "react-bootstrap";
+import {SiteNavbar} from "./SiteNavbar";
 
 export const Header: FC = () => {
   return (
     <header className={"site-header"}>
-      <Navbar bg={"dark"} variant={"dark"} fixed={"top"} expand={"lg"} className={"header-navbar"}>
-        <Container fluid>
-          <Navbar.Brand href={'/'} className={"me-4"}>
-            <img alt={"logo"} src={`${process.env.PUBLIC_URL}/logo.png`} width={"32"} height={"32"}
-                 className={"d-inline-block align-top me-2"}
-            />
-            Meal Helper
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls={"basic-navbar-nav"} />
-          <Navbar.Offcanvas id={`offcanvasNavbar-expand-lg`}
-                            aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
-                            placement={"start"}
-                            className={"bg-dark text-white"}
-          >
-            <Offcanvas.Header closeButton closeVariant={"white"}>
-              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                Menu
-              </Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body className={"align-items-center"}>
-              <Nav className={"me-auto"}>
-                <Nav.Link href={"/"}>Dishes</Nav.Link>
-                <Nav.Link href={"#link"}>Products</Nav.Link>
-                <Nav.Link href={"#link"}>About</Nav.Link>
-              </Nav>
-              <div className={"mt-4 mt-lg-0"}>
-                <Button variant={"warning"} className={"me-2"}>Sign In</Button>
-                <Button variant={"outline-light"}>Sign Up</Button>
-              </div>
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
-        </Container>
-      </Navbar>
+      <SiteNavbar />
       <Container fluid className={"header-image-container p-0"}>
         <Image src={`${process.env.PUBLIC_URL}/header-image.jpg`} alt={"Food"}
                className={"header-image img-fluid vh-100 vw-100"} />
