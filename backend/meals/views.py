@@ -6,6 +6,8 @@ from meals.pagination import StandardResultsSetPagination
 from meals.models import Meal
 from meals.serializers import MealSerializer
 
+from string import ascii_lowercase
+
 
 def get_ingredients(meal):
     ingredients = []
@@ -13,6 +15,7 @@ def get_ingredients(meal):
         key = 'strIngredient' + str(x)
         if meal.get(key) is not None:
             if meal.get(key) != '':
+                print(meal.get(key))
                 ingredients.append(meal.get(key))
     return ingredients
 
@@ -25,23 +28,44 @@ class SelectMealsView(generics.ListAPIView):
 
     def list(self, request, *args, **kwargs):
         d = []
-        mealObj = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata').json().get('meals')[0]
 
-        ingredients = get_ingredients(mealObj)
+        available_products = self.request.user.products.all()
 
-        url = mealObj.get('strMealThumb')
-        response = requests.get(url)
-        if response.status_code == 200:
-            with open('.\\media\\mealsPhotos\\' + mealObj.get('idMeal') + '.jpg', 'wb') as f:
-                f.write(response.content)
+        for i in ascii_lowercase:
+            print(i)
+            print(f"www.website.com/term/{i}")
+            mealsList = requests.get(f"https://www.themealdb.com/api/json/v1/1/search.php?f={i}").json().get('meals')
+            if mealsList is None:
+                continue
+            for meal in mealsList:
+                ingredients = []
+                for x in range(20):
+                    key = 'strIngredient' + str(x)
+                    if meal.get(key) is not None:
+                        if meal.get(key) != '':
+                            ingredients.append(meal.get(key))
+                available = True
 
-        meal = {
-            'name': mealObj.get('strMeal'),
-            'category': mealObj.get('strCategory'),
-            'recipe': mealObj.get('strInstructions'),
-            'photo': '.\\media\\mealsPhotos\\' + mealObj.get('idMeal') + '.jpg',
-        }
-        d.append(meal)
+                for ing in ingredients:
+                    if available_products.filter(name=ing).first() is None:     # product or none
+                        available = False
+                        break
+
+                if available:
+                    url = meal.get('strMealThumb')
+                    response = requests.get(url)
+                    if response.status_code == 200:
+                        with open('.\\media\\mealsPhotos\\' + meal.get('idMeal') + '.jpg', 'wb') as f:
+                            f.write(response.content)
+
+                    meal = {
+                        'name': meal.get('strMeal'),
+                        'category': meal.get('strCategory'),
+                        'recipe': meal.get('strInstructions'),
+                        'photo': '.\\media\\mealsPhotos\\' + meal.get('idMeal') + '.jpg',
+                    }
+                    d.append(meal)
+
         serializer = MealSerializer(d, many=True)
         page = self.paginate_queryset(serializer.data)
 
