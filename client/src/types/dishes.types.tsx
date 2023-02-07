@@ -1,4 +1,4 @@
-import {MutableRefObject, ReactElement} from "react";
+import {ReactElement} from "react";
 
 export type Dish = {
   id: number | string,
@@ -6,7 +6,7 @@ export type Dish = {
   area: string,
   category: string,
   drinkAlternate?: boolean,
-  tags?: string | string[],
+  tags?: string[],
   youTubeLink?: string,
   preparationTime: string,
   recipe: Recipe,
@@ -55,6 +55,10 @@ export type PopularDishesSectionStateType = {
 
 export type PopularDishesSectionPropsType = {
   setHomePageLoaded: () => void
+}
+
+export type DishDetailsPageStateType = {
+  dish?: Dish
 }
 
 export enum DishesShowDishesSelectorEnum {

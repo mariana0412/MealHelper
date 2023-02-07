@@ -23,7 +23,12 @@ export const DishesListItem: FC<DishesListItemPropsType> = props => {
         </div>
       </header>
       <div className={"dish-card-content"}>
-        <Link to={`/dishes/${props.dish.id}`} replace className={"w-100 btn btn-warning"}>View recipe</Link>
+        <Link to={`/dishes/${props.dish.id}`}
+              state={{dish: props.dish}}
+              replace
+              className={"w-100 btn btn-warning"}>
+          View recipe
+        </Link>
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ export const dishHandler = {
       category: object.strCategory,
       drinkAlternate: object.strDrinkAlternate,
       tags: object.strTags?.split(','),
-      youTubeLink: object.strYouTube,
+      youTubeLink: object.strYoutube,
       image: object.strMealThumb,
       preparationTime: (Math.floor(Math.random() * 120) + 5).toString() + "min.",
       recipe: {
