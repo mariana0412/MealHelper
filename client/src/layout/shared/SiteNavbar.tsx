@@ -33,8 +33,8 @@ export const SiteNavbar: FC = () => {
               <LinkContainer to={'/products'} replace>
                 <Nav.Link>Products</Nav.Link>
               </LinkContainer>
-              <LinkContainer to={'/'} state={{scrollToAboutSection: true}} replace>
-                <Nav.Link href={"/"}>About</Nav.Link>
+              <LinkContainer to={'/about'} replace>
+                <Nav.Link>About</Nav.Link>
               </LinkContainer>
             </Nav>
             <div className={"mt-4 mt-lg-0"}>

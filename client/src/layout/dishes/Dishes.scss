@@ -4,8 +4,34 @@
 .dishes-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 58px;
+  margin-top: 68px;
+
+  .dishes-section-filters {
+    margin-inline: 10px;
+    background: $white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px -7px $dark;
+    flex-wrap: wrap;
+
+    .dishes-section-filters-item {
+      width: 100%;
+    }
+
+    select {
+      min-width: 150px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    span {
+      display: inline-flex;
+      white-space: nowrap;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
 
   .sidebar-container {
     max-width: 320px;
@@ -14,6 +40,11 @@
     .sidebar {
       position: fixed;
     }
+  }
+
+  .pagination {
+    margin-inline: map-get($spacers, 2);
+    margin-bottom: map-get($spacers, 2);
   }
   
   .section-content {
@@ -62,6 +93,13 @@
 @media screen and (min-width: map-get($grid-breakpoints, "sm")) {
   .dishes-section {
 
+    .dishes-section-filters {
+
+      .dishes-section-filters-item {
+        width: auto;
+      }
+    }
+
     .section-content {
 
       .dishes-list-container {
@@ -89,6 +127,10 @@
 
 @media screen and (min-width: map-get($grid-breakpoints, "xl")) {
   .dishes-section {
+
+    .dishes-section-filters {
+      flex-wrap: nowrap;
+    }
 
     .section-content {
 
